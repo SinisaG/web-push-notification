@@ -58,6 +58,5 @@ typings/
 .env
 
 # User added
-config/
 node_modules/
 public/stylesheets/style.css*

@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 const webpush = require('web-push');
-const VAPID = require('../config/vapid.json');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Homeday Push' });
+  res.render('index', { title: 'Web Push Notification Demo', vapid: process.env.VAPID_PUBLIC_KEY });
 });
 
 router.post('/subscribe', function(req, res, next) {
@@ -17,8 +17,8 @@ router.post('/subscribe', function(req, res, next) {
       TTL: 24 * 60 * 60,
       vapidDetails: {
         subject: 'mailto:sinisa.grubor@homeday.de',
-        publicKey: VAPID.publicKey,
-        privateKey: VAPID.privateKey
+        publicKey: process.env.VAPID_PUBLIC_KEY,
+        privateKey: process.env.VAPID_PRIVATE_KEY
       },
     }
     webpush.sendNotification(

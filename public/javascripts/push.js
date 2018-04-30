@@ -28,11 +28,6 @@ function postAjax(url, data, success) {
 	xhr.send(JSON.stringify(data));
 }
 
-/* GLOBALS */
-window.homeday = {
-	vapid: urlBase64ToUint8Array("BLT20FV73ZHGWSruuSp97eNOETN6WGh73mZ9_weKrFlsgP2rlPiQ5astaATT-Vf_GTwqlyaxH92cJbjUDLfom40")
-};
-
 /* APPLICATION */ 
 // Register the serviceWorker script at /serviceworker.js from our server if supported
 const subscribeBtn = document.getElementById('push-subscribe');
@@ -59,7 +54,7 @@ if ('serviceWorker' in navigator) {
 						}
 						return serviceWorkerRegistration.pushManager.subscribe({
 							userVisibleOnly: true,
-							applicationServerKey: window.homeday.vapid
+							applicationServerKey: urlBase64ToUint8Array(window.homeday.vapid)
 						});
 					}).then((subscription) => {
 						if (subscription) {
