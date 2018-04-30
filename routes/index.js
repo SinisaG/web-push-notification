@@ -30,7 +30,7 @@ router.post('/subscribe', function(req, res, next) {
     }).catch( (e) => {
       console.log(e);
     });
-  }, 1000);
+  }, 30 * 1000);
   res.writeHead(200, {
     'Content-Type': 'text/plain',
   });
