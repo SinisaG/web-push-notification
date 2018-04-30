@@ -1,0 +1,15 @@
+{
+    "name": "Homeday Push",
+    "short_name": "HDP",
+    "start_url":"/",
+    "icons": [
+      {
+        "src": "/images/icons/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "theme_color": "#1895FF",
+    "background_color": "#ffffff",
+    "display": "standalone"
+  }
