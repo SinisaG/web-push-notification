@@ -1,5 +1,9 @@
 ## Web-push-notificatio
 
+#### Demo 
+
+To see it in action, please [visit](https://web-push-notification-demo.herokuapp.com).
+
 #### Idea
 
 This is just a simple demo, how one can trigger push notifications on the web. The project is using `VAPID` for auth 
